@@ -6,6 +6,18 @@ This repo was inspired by a google coaching call question. The question was as f
 
 *Implement a set like data structure with efficient insert, remove and getRandomElement functions. The getRandomElement function should return items with equal probability.*
 
+## Usage & Installation
+
+### Run the example (main.cpp)
+	git clone https://github.com/nmante/NMSet
+	cd NMSet
+	make
+	./setDS
+
+###Include in your own code
+
+You can include either of the implementations [hashset/hashset.hpp](hashset/hashset.hpp) or [treeset/treeset.hpp](hashset/hashset.hpp) in your projects. They are template header only implementations. Compile with `-std=c++11` since this uses features from there. See the [Makefile](Makefile) as an example on how to use `c++11`.
+
 ## Implementation
 
 There are several ways you can do this. The first thing to think of is what are the requirements for runtime complexity. 
