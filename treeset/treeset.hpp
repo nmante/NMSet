@@ -3,74 +3,35 @@
 #include <time.h>
 #include <cmath>
 #include <iostream>
+#include "avltree.hpp"
 
-class AVLNode{
-public:
-	AVLNode *left;
-	AVLNode *right;
-	AVLNode *parent;
-	int balance;
-	int key;
-	AVLNode(int key, AVLNode *parent) :
-	left(nullptr), right(nullptr), parent(parent), key(key)
-	{}
-	~AVLNode(){
-		delete left;
-		delete right;
-	}
-
-};
-
-class AVLTree{
-	int height;
-	AVLNode *root;
-public:
-	bool insert(int val){
-		return false;
-	}
-	bool remove(int val){
-		return false;
-	}
-	int getHeight() const { return height; }
-	AVLNode *getRoot() const { return root; }
-
-};
 
 class NMTreeSet{
-	AVLTree *tree;
+	AVLTree<int> *tree;
 public:
 	NMTreeSet(){
+		tree = new AVLTree<int>();
+	}
+	~NMTreeSet(){
+		delete tree;
 	}
 	bool insert(int val){
-		return tree->insert(val);
+		return this->tree->insert(val);
 	}
 
-	bool remove(int val){
-		return tree->remove(val);
+	void remove(int val){
+		this->tree->deleteKey(val);
+	}
+	void print(){
+		this->tree->printTree(PrintType::inOrderPrint);
 	}
 
 	int getRandomElement(){
 		// Choose random depth
 		// Go down until depth
 		// At each choice, choose random direction
-		int depth = std::rand() % tree->getHeight();
-		auto *tmp = tree->getRoot();
-		for(int i = 0; i < depth; i++){
-			int choice = std::rand() % 1;
-			if(choice){
-				// right
-				tmp = tmp->right;
-			}else{
-				// left
-				tmp = tmp->left;
-			}
-		}
-		if(tmp){
-			return tmp->key;
-		}
-		return -1;
+		return tree->getRandomElement();
 	}
-
 };
 
 #endif // __TREESET_HPP__

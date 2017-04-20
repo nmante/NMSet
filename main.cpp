@@ -45,9 +45,9 @@ namespace HashSetTest{
 		std::cout << "Random value: " << hs.getRandomElement() << std::endl;
 	}
 }
+
 namespace TreeSetTest{
 	void treesetTest(){
-		/*
 		NMTreeSet hs;
 		hs.insert(0);hs.insert(20);
 		hs.insert(20);hs.insert(20);
@@ -55,15 +55,15 @@ namespace TreeSetTest{
 		hs.insert(4);hs.insert(3);
 		hs.insert(3);hs.insert(51);
 		hs.insert(1000000);
+		hs.print();
 		std::cout << "Random value: " << hs.getRandomElement() << std::endl;
-		*/
 	}
 }
 
-int main(int argc, char *argv[]){
+int main(){
 	std::srand(std::time(NULL));
 	HashSetTest::hashTableTest();
 	HashSetTest::hashsetTest();
-	
+	TreeSetTest::treesetTest();
 	return 0;
 }
