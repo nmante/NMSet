@@ -44,4 +44,4 @@ Of course, in the context of a 45 minute interview it would be difficult to impl
 
 ## Source Code
 
-I've included a hash based implementation [hashset/hashset.hpp](hashset/hashset.hpp). A completed tree based implementation will be coming soon. Usage of the two can be seen in [main.cpp](main.cpp).
+I've included a hash based implementation [hashset/hashset.hpp](hashset/hashset.hpp) and a tree based implementation in [treeset/treeset.hpp](treeset/treeset.hpp).  Usage of the two can be seen in [main.cpp](main.cpp).
